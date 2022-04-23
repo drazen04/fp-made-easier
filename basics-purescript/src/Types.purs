@@ -9,6 +9,8 @@ import Data.Maybe (Maybe(..))
 import Data.String (length)
 import Effect.Class.Console (error)
 import Prim.Boolean (True)
+import Prim.Row (class Cons)
+import Prim.RowList (Nil)
 
 
 ----------------------- Boolean -----------------------
@@ -179,3 +181,16 @@ type Point = Tuple Int Int
 -- Tuple Boolean Boolean ≅ Either Boolean Boolean
 
 ----------------------- List -----------------------
+data List a = Cons a (List a) | Nil -- Cons put a  single Value onto the head of a List
+infixr 6  Cons as : -- The : is an infix operator for the Cons Data Constructor
+                    -- The : is righ (r) associative infix(r)
+
+nums :: List Int
+nums = 1 : 2 : 3 : Nil
+
+-- right associative can be written as ↓
+    -- nums :: List Int
+    -- nums = (1 : (2 : (3 : Nil)))
+-- with Cons
+    -- nums :: List Int
+    -- nums = Cons 1 (Cons 2 (Cons 3 Nil))
