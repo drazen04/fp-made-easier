@@ -3,6 +3,7 @@ module Types where
 import Data.String.CodeUnits
 import Prelude
 
+import Data.Array.NonEmpty (head)
 import Data.Array.ST (splice)
 import Data.Either (Either(..))
 import Data.Maybe (Maybe(..))
@@ -194,3 +195,11 @@ nums = 1 : 2 : 3 : Nil
 -- with Cons
     -- nums :: List Int
     -- nums = Cons 1 (Cons 2 (Cons 3 Nil))
+
+head :: ∀ a. List a -> Maybe a
+head Nil        = Nothing
+head (x : _)    = Just x
+
+tail :: ∀ a. List a -> Maybe (List a)
+tail Nil        = Nothing
+tail (_ : xs)   = Just xs
