@@ -7,3 +7,4 @@ tasks:
 vscode:
   extensions:
     - nwolverson.ide-purescript
+    - nwolverson.language-purescript
