@@ -3,6 +3,7 @@ module Types where
 import Data.String.CodeUnits
 import Prelude
 
+import Data.Array.ST (splice)
 import Data.Either (Either(..))
 import Data.Maybe (Maybe(..))
 import Data.String (length)
@@ -10,21 +11,21 @@ import Effect.Class.Console (error)
 import Prim.Boolean (True)
 
 
--- Boolean
+----------------------- Boolean -----------------------
 t :: Boolean
 t = true
 
 f :: Boolean
 f = false
 
--- Char
+----------------------- Char -----------------------
 c :: Char
 c = 'c'
 
 unicodeCh :: Char
 unicodeCh = '\x00E9'
 
--- String
+----------------------- String -----------------------
 s :: String
 s = "stringa"
 
@@ -33,7 +34,7 @@ s2 = "Test stringa che\
       \ continua senza "
 
 
--- Number
+----------------------- Number -----------------------
 n :: Number
 n = 1.0
 
@@ -43,7 +44,7 @@ smallestNumber = (-5e-324)
 largestNumber :: Number
 largestNumber = 1.7676931348623157e+308
 
--- Int
+----------------------- Int -----------------------
 i :: Int
 i = 42
 
@@ -56,7 +57,7 @@ smallestInt = (-2147483648) -- -2^31
 largestInt :: Int
 largestInt = 2147483647 -- 2^31 - 1
 
--- Array
+----------------------- Array -----------------------
 emptyArray :: Array Int
 emptyArray = []
 
@@ -69,7 +70,7 @@ a2 = ["prima", "seconda", "terza"]
 aa :: Array (Array Int)
 aa = [ [12,45,6], [3,6,7], [87,6] ]
 
--- Record
+----------------------- Record -----------------------
 r :: { firstName :: String, lastName :: String }
 r = { firstName: "Mastro", lastName: "Andrea" }
 
@@ -90,15 +91,16 @@ type Nested =
     }
 
 
--- Type Alias
+----------------------- Type Alias -----------------------
 type Id = String
 
 type Message = { id :: Id, payload :: String }
 
--- Data Type
+----------------------- Data Type -----------------------
 data MyType = MyType
 
--- Sum Type | Unions because a union in Set Theory is an OR operation
+----------------------- Sum Type | Unions -----------------------
+-- Unions because a union in Set Theory is an OR operation
 data Bool = True | False
 
 -- Other ↓
@@ -127,7 +129,7 @@ data FailureReason' a
     | NotFound'
     | Other' a
 
--- Product Type
+----------------------- Product Type -----------------------
 data Triplet a b c = Triplet a b c
 
 type StringStats = Triplet String Int Int
