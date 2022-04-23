@@ -1,0 +1,6 @@
+tasks:
+  - name: Install Purescript and Spago 
+    init: |
+      npm install purescript
+      npm install spago
+    command: spago build
