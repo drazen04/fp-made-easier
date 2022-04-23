@@ -153,3 +153,29 @@ myHush (Right x) = Just x
 myNote :: ∀ a b. a -> Maybe b -> Either a b
 myNote err Nothing = Left err
 myNote _ (Just x)  = Right x
+
+----------------------- Tuple -----------------------
+-- Tuple is a Product Type
+data Tuple a b = Tuple a b
+
+-- use case: coordinates --> it can be an alias
+type Point = Tuple Int Int
+
+-- use case: when you want to return back two values from Function:
+-- splitPosAndNeg :: Array Int -> Tuple (Array Int) (Array Int)
+
+-- Either vs Tuple
+    -- Either is a Sum Type
+        -- Either: = a + b
+    -- Tuple is a Product Type
+        -- Tuple: = a * b
+
+-- Either and Tuple are Isomorphic when a and b are equal 2 or 0
+    -- a + b = a * b
+    -- 0 + 0 = 0 * 0 (a, b = 0)
+    -- 2 + 2 = 2 * 2 (a, b = 2)
+
+-- Tuple Void Void ≅ Either Void Void
+-- Tuple Boolean Boolean ≅ Either Boolean Boolean
+
+----------------------- List -----------------------
