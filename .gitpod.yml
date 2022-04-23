@@ -3,3 +3,7 @@ tasks:
     command: |
       npm install -g purescript
       npm install -g spago
+
+vscode:
+  extensions:
+    - nwolverson.ide-purescript
