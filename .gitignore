@@ -1,9 +1,37 @@
-# Dependencies
-.psci_modules
-.spago
-bower_components
+**/.build
+bin
+dist
+cabal-dev
+.cabal-sandbox
+stack.yaml.lock
+cabal.sandbox.config
+dist-newstyle/
+cabal.project.local*
+*.o
+*.hi
+*.chi
+*.chs.h
+*.lksh*
+.virthualenv
+.psci_modules/
+.test_modules/
+bower_components/
 node_modules
-
-# Generated files
-.psci
+tmp/
+.stack-work/
 output
+tests/purs/docs/docs/
+core-tests/full-core-docs.md
+tests/support/package-lock.json
+**/.psc-ide-port
+.psc-package/
+tags
+TAGS
+
+# Profiling related
+*.aux
+*.hp
+*.prof
+*.ps
+*.svg
+tests/purs/make/
