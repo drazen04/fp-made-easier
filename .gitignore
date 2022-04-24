@@ -28,6 +28,8 @@ tests/support/package-lock.json
 tags
 TAGS
 
+**/.purs*
+
 # Profiling related
 *.aux
 *.hp
